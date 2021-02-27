@@ -17,12 +17,12 @@
 
 module uart_rx(clk,rst,rx,rx_data_out);
 
-parameter clk_freq = 50000000; //MHz
-parameter baud_rate = 19200; //bits per second
+parameter clk_freq = 50000000 ; //MHz
+parameter baud_rate = 19200 ; //bits per second
 input clk;
 input rst;
 input rx;
-output [7:0] rx_data_out;
+	output [7:0] rx_data_out ;
 
 localparam clock_divide = (clk_freq/baud_rate);
 
@@ -46,7 +46,7 @@ index_bit_reg <= 0;
 end
 else begin
 rx_STATE <= rx_NEXT;
-clk_div_reg <= clk_div_next;
+clk_div_reg <= clk_div_next ;
 rx_data_reg <= rx_data_next;
 index_bit_reg <= index_bit_next;
 end
